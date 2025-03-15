@@ -1,5 +1,5 @@
 # PyLog
-simple logger for python\
+simple logger for python
 
 ## quick start
 just download pylog.py and include it in your project!
