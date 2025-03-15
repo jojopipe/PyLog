@@ -1,3 +1,6 @@
+# Jorik Pfeiffer 2025
+# https://github.com/jojopipe/PyLog
+
 import datetime
 import os
 os.system('')
