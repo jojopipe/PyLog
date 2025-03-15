@@ -9,8 +9,18 @@ os.system('')
 __log_file__ = None
 __no_log__ = False
 __everything_to_file__ = False
+__log_levels__ = {"info": True, "okay": True, "warning": True, "error": True, "extra": True}
 
 # functions:
+def set_log_levels(level_info=True, level_okay=True, level_warning=True, level_error=True, level_extra=True):
+    global __log_levels__
+    __log_levels__["info"] = level_info
+    __log_levels__["okay"] = level_okay
+    __log_levels__["warning"] = level_warning
+    __log_levels__["error"] = level_error
+    __log_levels__["extra"] = level_extra
+
+
 def no_log(override=True) -> None:
     """
     turn off/on all logging
@@ -67,6 +77,8 @@ def info(message: str, to_file = False) -> None:
     """
     if __no_log__:
         return
+    if not __log_levels__["info"]:
+        return
     output = f"[i] {message}"
     if __everything_to_file__ or to_file:
         __write_to_file__(output)
@@ -81,6 +93,8 @@ def okay(message: str, to_file = False) -> None:
     :param to_file: message will be written to log file, can be overridden by always_to_file()
     """
     if __no_log__:
+        return
+    if not __log_levels__["okay"]:
         return
     output = f"[k] {message}"
     if __everything_to_file__ or to_file:
@@ -97,6 +111,8 @@ def warning(message: str, to_file = False) -> None:
     """
     if __no_log__:
         return
+    if not __log_levels__["warning"]:
+        return
     output = f"[w] {message}"
     if __everything_to_file__ or to_file:
         __write_to_file__(output)
@@ -112,6 +128,8 @@ def error(message: str, to_file = False) -> None:
     """
     if __no_log__:
         return
+    if not __log_levels__["error"]:
+        return
     output = f"[e] {message}"
     if __everything_to_file__ or to_file:
         __write_to_file__(output)
@@ -126,6 +144,8 @@ def extra(message: str, to_file = False) -> None:
     :param to_file: message will be written to log file, can be overridden by always_to_file()
     """
     if __no_log__:
+        return
+    if not __log_levels__["extra"]:
         return
     output = f"[x] {message}"
     if __everything_to_file__ or to_file:
