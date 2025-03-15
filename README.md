@@ -15,7 +15,7 @@ pylog.error("OHMAGAH, WEE WOO WEE WOO, ERROR OCCURED", to_file=True)
 pylog.extra("extra cheese please")
 ```
 will look like this in the terminal:
-![image](example.png)
+![image](example.png)\
 and produce the following log file:
 ```text
 2025-03-14 03:14:15: [k] all good
