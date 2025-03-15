@@ -11,7 +11,6 @@ __no_log__ = False
 __everything_to_file__ = False
 
 # functions:
-
 def no_log(override=True) -> None:
     """
     turn off/on all logging
@@ -86,7 +85,6 @@ def okay(message: str, to_file = False) -> None:
     output = f"[k] {message}"
     if __everything_to_file__ or to_file:
         __write_to_file__(output)
-    #os.system('')
     print("\033[92m{}\033[00m" .format(output))
     return
 
@@ -102,7 +100,6 @@ def warning(message: str, to_file = False) -> None:
     output = f"[w] {message}"
     if __everything_to_file__ or to_file:
         __write_to_file__(output)
-    #os.system('')
     print("\033[93m{}\033[00m" .format(output))
     return
 
@@ -118,7 +115,6 @@ def error(message: str, to_file = False) -> None:
     output = f"[e] {message}"
     if __everything_to_file__ or to_file:
         __write_to_file__(output)
-    #os.system('')
     print("\033[91m{}\033[00m" .format(output))
     return
 
@@ -134,6 +130,5 @@ def extra(message: str, to_file = False) -> None:
     output = f"[x] {message}"
     if __everything_to_file__ or to_file:
         __write_to_file__(output)
-    #os.system('')
     print("\033[96m{}\033[00m" .format(output))
     return
